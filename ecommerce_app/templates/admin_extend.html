@@ -1,0 +1,14 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+    <div class="app-list">
+        {% for app in app_list %}
+            <div class="model-list">
+                <h2>{{ app.name }}</h2>
+                {% for model in app.models %}
+                    <a href="{{ model.admin_url }}">{{ model.name }}</a>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
